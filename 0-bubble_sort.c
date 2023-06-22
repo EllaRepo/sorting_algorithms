@@ -11,8 +11,6 @@ void bubble_sort(int *array, size_t size)
 	size_t i;
 	int tmp, isSwap;
 
-	print_array(array, size);
-
 	while (1)
 	{
 		isSwap = 0;
@@ -30,6 +28,4 @@ void bubble_sort(int *array, size_t size)
 		if (!isSwap)
 			break;
 	}
-
-	print_array(array, size);
 }
