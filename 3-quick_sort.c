@@ -21,10 +21,10 @@ void swap(int *a, int *b)
  *
  * Return: ending endex of the new array
  */
-size_t lomuto_partition(int *array, long int low, long int high, size_t size)
+size_t lomuto_partition(int *array, int low, int high, int size)
 {
 	int pivot;
-	long int i, j;
+	int i, j;
 
 	pivot = array[high];
 	i = low;
@@ -40,8 +40,11 @@ size_t lomuto_partition(int *array, long int low, long int high, size_t size)
 			i++;
 		}
 	}
-	swap(&array[i], &array[high]);
-	print_array(array, size);
+	if (i != high && array[i] != array[high])
+	{
+		swap(&array[i], &array[high]);
+		print_array(array, size);
+	}
 	return (i);
 }
 /**
@@ -54,9 +57,9 @@ size_t lomuto_partition(int *array, long int low, long int high, size_t size)
  *
  * Return: None
  */
-void _quick_sort(int *array, long int low, long int high, size_t size)
+void _quick_sort(int *array, int low, int high, int size)
 {
-	long int p;
+	int p;
 
 	if (low < high)
 	{
