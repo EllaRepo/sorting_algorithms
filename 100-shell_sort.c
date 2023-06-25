@@ -36,8 +36,11 @@ void _shell_sort(int *array, int n, int size)
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t n = 1;
+	size_t n;
 
+	if (array == NULL || size < 2)
+		return;
+	n = 1;
 	while (n <= size / 3)
 		n = n * 3 + 1;
 	_shell_sort(array, n, size);
